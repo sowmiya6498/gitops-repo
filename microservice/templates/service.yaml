@@ -7,8 +7,8 @@ spec:
   type: ClusterIP
   selector:
     app: microservice
-    version: v1   # ✅ must match your Deployment pod labels
+    version: v1   # 👉 this points to BLUE
   ports:
     - port: 80
-      targetPort: 3000   # match the port in server.js
+      targetPort: 3000
 
