@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservice-green
+  name: microservice-blue
   namespace: prod
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: microservice
-      version: v2
+      version: v1
   template:
     metadata:
       labels:
         app: microservice
-        version: v2
+        version: v1
     spec:
       containers:
-        - name: microservice-green
-          image: sowmiyahemanth/microservice-green:v1
+        - name: microservice-blue
+          image: sowmiyahemanth/microservice-blue:v1
           ports:
             - containerPort: 3000
 
