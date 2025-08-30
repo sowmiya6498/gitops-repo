@@ -1,5 +1,5 @@
 image:
-  repository: sowmiya/microservice   # change to your DockerHub repo
+  repository: sowmiya/microservice   # change to your DockerHub or ECR repo
   tag: v1
-color: blue
-
+color: blue   # switch between blue / green for deployments
+replicaCount: 2
