@@ -1,1 +1,6 @@
+apiVersion: v2
+name: microservice
+description: A Helm chart for deploying microservice with Blue-Green strategy
+version: 0.1.0
+appVersion: "1.0"
 
