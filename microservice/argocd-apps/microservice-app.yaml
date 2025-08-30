@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/<your-username>/gitops-repo.git
+    repoURL: https://github.com/sowmiya6498/gitops-repo.git
     targetRevision: main
     path: microservice
     helm:
