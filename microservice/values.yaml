@@ -1,5 +1,10 @@
-image:
-  repository: sowmiyahemanth/microservice-blue   # DockerHub repo
-  tag: v1
-color: blue   # switch between blue / green for deployments
 replicaCount: 2
+namespace: prod
+
+image:
+  repository: sowmiyahemanth/microservice-blue
+  tag: v1
+
+service:
+  port: 3000
+

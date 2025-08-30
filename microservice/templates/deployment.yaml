@@ -1,26 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: microservice-{{ .Values.color }}
-  labels:
-    app: microservice
-    version: {{ .Values.color }}
+  name: {{ .Release.Name }}
+  namespace: {{ .Values.namespace }}
 spec:
-  replicas: 2
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: microservice
-      version: {{ .Values.color }}
+      app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-        app: microservice
-        version: {{ .Values.color }}
+        app: {{ .Chart.Name }}
     spec:
-       containers:
-  - name: microservice-blue
-    image: sowmiyahemanth/microservice-blue:v1
-    ports:
-      - containerPort: 80
-
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: {{ .Values.service.port }}
 
