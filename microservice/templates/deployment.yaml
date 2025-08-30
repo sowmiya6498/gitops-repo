@@ -17,9 +17,10 @@ spec:
         app: microservice
         version: {{ .Values.color }}
     spec:
-      containers:
-        - name: microservice
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          ports:
-            - containerPort: 8080
+       containers:
+  - name: microservice-blue
+    image: sowmiyahemanth/microservice-blue:v1
+    ports:
+      - containerPort: 80
+
 
