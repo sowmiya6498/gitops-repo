@@ -1,1 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: microservice
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/sowmiya6498/gitops-repo.git
+    targetRevision: main
+    path: microservice
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
 
